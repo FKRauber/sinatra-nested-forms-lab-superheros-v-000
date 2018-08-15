@@ -1,10 +1,10 @@
 class SuperHero
-  attr_accessor :name, :power, :biography
+  attr_accessor :name, :power, :bio
 
   def initialize(args={})
     @name = args[:name]
     @power = args[:power]
-    @biography = args[:biography]
+    @biography = args[:bio]
     self.save
   end
 
