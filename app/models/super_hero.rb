@@ -5,5 +5,10 @@ class SuperHero
     @name = args[:name]
     @power = args[:power]
     @biography = args[:biography]
+    self.save
+  end
+
+  def self.all
+    @@all ||= []
   end
 end
