@@ -8,11 +8,11 @@ class App < Sinatra::Base
       erb :index
     end
 
-    post '/teams' do
+    post "/teams" do
       @team = Team.new(name: params[:team][:name], motto: params[:team][:motto])
       members = params[:team][:members]
-      @super_heroes = members.map do |member|
-        SuperHero.new({name: member[:name], power: member[:power], bio: member[:bio]})
+      @super_heroes = members.collect do |member_params|
+        SuperHero.new({name: member_params[:name], power: member_params[:power], bio: member_params[:bio]})
       end
       erb :team
     end
